@@ -1,0 +1,7 @@
+#Main yml file 
+---
+  - hosts: testgroup
+    become: true
+    roles: 
+      - kvm-provisioning
+      - vm-deployment

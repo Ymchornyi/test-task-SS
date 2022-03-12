@@ -1,0 +1,7 @@
+[testgroup]
+testvm ansible_host=10.0.0.6 ansible_connection=ssh ansible_ssh_ser=ymchornyi
+#  ansible_ssh_pass=Agent007!!!!!
+
+
+
+

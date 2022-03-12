@@ -1,0 +1,25 @@
+---
+# tasks file for cfg-libvirt-role
+ - name: Install needed packages 
+   apt: 
+     name:
+       - bridge-utils 
+       - cpu-checker 
+       - libvirt-clients 
+       - libvirt-daemon
+       - libvirt-daemon-system 
+       - qemu 
+       - qemu-kvm
+       - libguestfs-tools
+       - virtinst
+     state: present 
+ - name: Add users to group for furure authorization
+   user: 
+     name: ymchornyi
+     groups: 
+      - kvm 
+      - libvirt   
+ - name: Ensure libvirt service is running 
+   service:
+     name: libvirtd
+     state: started
