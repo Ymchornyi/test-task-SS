@@ -37,7 +37,7 @@
         virt-customize -a {{ libvirt_pool_dir }}/{{ vm_name }}.qcow2 \
         --hostname {{ vm_name }} \
         --root-password password:{{ vm_root_pass }} \
-        --ssh-inject 'root:file:root.pub' \
+        --ssh-inject 'root:file:/root/.ssh/root.pub' \
         --uninstall cloud-init --selinux-relabel
       
       when: copy_results is changed
