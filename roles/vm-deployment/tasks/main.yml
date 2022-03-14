@@ -55,6 +55,10 @@
         name: default_network
         xml: '{{ lookup("template", "network/default_network.xml") }}'
     
+    - community.libvirt.virt_net:
+      command: create
+        name: default_network
+    
     - name: Configure DHCP reservation for VM 
       community.libvirt.virt_net:
         name: default_network
