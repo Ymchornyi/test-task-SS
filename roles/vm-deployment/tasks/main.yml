@@ -49,15 +49,17 @@
         xml: "{{ lookup('template', 'vm-tamplate.xml') }}"
 
     
+    - name: Create network
+      community.libvirt.virt_net:
+        command: create
+        name: default_network
+   
     - name: Define Network
       community.libvirt.virt_net:
         command: define
         name: default_network
         xml: '{{ lookup("template", "network/default_network.xml") }}'
-    
-    - community.libvirt.virt_net:
-      command: create
-        name: default_network
+  
     
     - name: Configure DHCP reservation for VM 
       community.libvirt.virt_net:
