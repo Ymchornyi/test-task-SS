@@ -48,9 +48,16 @@
         command: define
         xml: "{{ lookup('template', 'vm-tamplate.xml') }}"
 
+    
+    - name: Define Network
+      community.libvirt.virt_net:
+        command: define
+        name: default_network
+        xml: '{{ lookup("template", "network/default_network.xml") }}'
+    
     - name: Configure DHCP reservation for VM 
       community.libvirt.virt_net:
-        name: br_nat
+        name: default_network
         command: modify
         xml: "<52:54:00:f3:25:90' name='{{ vm_name }}' ip='192.168.122.30'/>"
 
