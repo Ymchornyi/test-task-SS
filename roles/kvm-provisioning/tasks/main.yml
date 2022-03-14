@@ -12,7 +12,7 @@
        - libguestfs-tools
        - virtinst
        - python-lxml
-       - python-libvirt
+       - python3-libvirt
     state: present
 - name: Add users to group for furure authorization
   user:
