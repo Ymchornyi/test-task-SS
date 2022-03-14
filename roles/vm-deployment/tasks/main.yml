@@ -48,6 +48,12 @@
         command: define
         xml: "{{ lookup('template', 'vm-tamplate.xml') }}"
 
+    - name: Configure DHCP reservation for VM 
+      community.libvirt.virt_net:
+        name: br_nat
+        command: modify
+        xml: "<52:54:00:f3:25:90' name='{{ vm_name }}' ip='192.168.122.30'/>"
+
       when: "vm_name not in existing_vms.list_vms"
 
 - name: Ensure VM is started
