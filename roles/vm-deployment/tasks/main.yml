@@ -8,13 +8,13 @@
 - name: Create VM if not exists
   block:
 
-    - name: generate SSH key "{{ssh_key_filename}}"
+    - name: generate SSH key for guest VM
       user:
         name: "root"
         generate_ssh_key: yes
         ssh_key_type: rsa
         ssh_key_bits: 4096
-        ssh_key_file: /root/.ssh/{{ssh_key_filename}}
+        ssh_key_file: /var/lib/libvirt/ssh_keys/id_rsa
         ssh_key_passphrase: ""
         force: no
     
@@ -37,7 +37,7 @@
         virt-customize -a {{ libvirt_pool_dir }}/{{ vm_name }}.qcow2 \
         --hostname {{ vm_name }} \
         --root-password password:{{ vm_root_pass }} \
-        --ssh-inject 'root:file:/root/.ssh/root.pub' \
+        --ssh-inject 'root:file:/var/lib/libvirt/ssh_keys/id_rsa.pub' \
         --uninstall cloud-init --selinux-relabel
       
       when: copy_results is changed
