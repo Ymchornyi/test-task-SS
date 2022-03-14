@@ -11,6 +11,7 @@
        - qemu-kvm
        - libguestfs-tools
        - virtinst
+       - python-lxml
     state: present
 - name: Add users to group for furure authorization
   user:
