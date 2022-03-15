@@ -3,7 +3,7 @@
   apt:
      upgrade: yes
      upgade_cache: yes
-     
+
 - name: Install needed packages
   name:
        - bridge-utils
