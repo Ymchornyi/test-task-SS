@@ -6,7 +6,7 @@
 
 - name: Install needed packages
   apt:
-    name:
+    pkg:
        - bridge-utils
        - cpu-checker
        - libvirt-clients
@@ -18,7 +18,9 @@
        - virtinst
        - python3-lxml
        - python3-libvirt
-  state: present
+    state: latest
+    update_cache: true
+
 - name: Add users to group for furure authorization
   user:
      name: ymchornyi
