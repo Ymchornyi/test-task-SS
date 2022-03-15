@@ -5,17 +5,19 @@
   register: existing_vms
   changed_when: no
 
-- name: Create network
-  community.libvirt.virt_net:
-    command: create
-    name: default_network
-   
+
 - name: Define Network
   community.libvirt.virt_net:
     command: define
     name: default_network
     xml: '{{ lookup("template", "network/default_network.xml") }}'
 
+- name: Create network
+  community.libvirt.virt_net:
+    command: create
+    name: default_network
+   
+   
 - name: Create VM if not exists
   block:
 
