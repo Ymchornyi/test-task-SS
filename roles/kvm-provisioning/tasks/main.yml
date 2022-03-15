@@ -5,8 +5,8 @@
      upgade_cache: yes
 
 - name: Install needed packages
-    apt:
-      name:
+  apt:
+    name:
        - bridge-utils
        - cpu-checker
        - libvirt-clients
@@ -18,7 +18,7 @@
        - virtinst
        - python3-lxml
        - python3-libvirt
-      state: present
+    state: present
 - name: Add users to group for furure authorization
   user:
      name: ymchornyi
