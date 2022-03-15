@@ -7,14 +7,14 @@
 
 - name: Create network
   community.libvirt.virt_net:
-     command: create
-     name: default_network
+    command: create
+    name: default_network
    
 - name: Define Network
   community.libvirt.virt_net:
-     command: define
-     name: default_network
-     xml: '{{ lookup("template", "network/default_network.xml") }}'
+    command: define
+    name: default_network
+    xml: '{{ lookup("template", "network/default_network.xml") }}'
 
 - name: Create VM if not exists
   block:
