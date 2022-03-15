@@ -67,7 +67,7 @@
       community.libvirt.virt_net:
         name: VM_net
         command: modify
-        xml: "<52:54:00:f3:25:90' name='{{ vm_name }}' ip='192.168.123.30'/>"
+        xml: "<host mac='52:54:00:f3:25:90' name='{{ vm_name }}' ip='192.168.123.30'/>"
 
       when: "vm_name not in existing_vms.list_vms"
 
