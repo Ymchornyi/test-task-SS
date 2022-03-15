@@ -3,7 +3,7 @@
   <memory unit='MiB'>{{ vm_ram_mb }}</memory>
   <vcpu placement='static'>{{ vm_vcpus }}</vcpu>
   <os>
-    <type arch='x86_64' machine='pc-i440fx-focal'>hvm</type>
+    <type arch='x86_64'>hvm</type>
     <boot dev='hd'/>
   </os>
   <features>
