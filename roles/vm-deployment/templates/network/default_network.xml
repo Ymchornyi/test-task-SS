@@ -5,7 +5,7 @@
       <port start='1024' end='65535'/>
     </nat>
   </forward>
-  <bridge name='default' stp='on' delay='0'/>
+  <bridge name='virbr1' stp='on' delay='0'/>
   <mac address='52:54:00:18:f8:88'/>
   <ip address='192.168.123.1' netmask='255.255.255.0'>
     <dhcp>
