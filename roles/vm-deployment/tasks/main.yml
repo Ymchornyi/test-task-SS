@@ -9,13 +9,13 @@
 - name: Define Network
   community.libvirt.virt_net:
     command: define
-    name: default_network
+    name: VM_net
     xml: '{{ lookup("template", "network/default_network.xml") }}'
 
 - name: Create network
   community.libvirt.virt_net:
     command: create
-    name: default_network
+    name: VM_net
    
 
 - name: Create VM if not exists
@@ -65,7 +65,7 @@
  
     - name: Configure DHCP reservation for VM 
       community.libvirt.virt_net:
-        name: default_network
+        name: VM_net
         command: modify
         xml: "<52:54:00:f3:25:90' name='{{ vm_name }}' ip='192.168.123.30'/>"
 
