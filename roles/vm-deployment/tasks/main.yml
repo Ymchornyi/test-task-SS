@@ -49,11 +49,11 @@
       command: |
         virt-customize -a {{ libvirt_pool_dir }}/{{ vm_name }}.qcow2 \
         --hostname {{ vm_name }} \
-        --uninstall ssh \
+        --run-command 'apt remove --purge openssh-server -y' \
         --root-password password:{{ vm_root_pass }} \
         --ssh-inject 'root:file:/var/lib/libvirt/ssh_keys/id_rsa.pub' \
-        --install openssh-server \
-        --uninstall cloud-init 
+        --run-command 'apt install openssh-server -y' \
+        --uninstall cloud-init \
         --selinux-relabel
       
       when: copy_results is changed
