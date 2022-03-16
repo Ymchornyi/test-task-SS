@@ -2,7 +2,7 @@
 - name: Perform apt update 
   apt:
      upgrade: yes
-     upgade_cache: True
+#     upgade_cache: True
 
 - name: Install needed packages
   apt:
@@ -19,7 +19,7 @@
        - python3-lxml
        - python3-libvirt
     state: latest
-    update_cache: True
+#    update_cache: True
 
 - name: Add users to group for furure authorization
   user:
