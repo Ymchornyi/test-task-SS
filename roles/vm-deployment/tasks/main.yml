@@ -52,7 +52,7 @@
         --uninstall ssh \
         --root-password password:{{ vm_root_pass }} \
         --ssh-inject 'root:file:/var/lib/libvirt/ssh_keys/id_rsa.pub' \
-        --install ssh \
+        --install openssh-server \
         --uninstall cloud-init 
         --selinux-relabel
       
