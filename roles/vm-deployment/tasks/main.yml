@@ -49,10 +49,12 @@
       command: |
         virt-customize -a {{ libvirt_pool_dir }}/{{ vm_name }}.qcow2 \
         --hostname {{ vm_name }} \
+        --uninstall ssh \
         --root-password password:{{ vm_root_pass }} \
         --ssh-inject 'root:file:/var/lib/libvirt/ssh_keys/id_rsa.pub' \
         --install ssh \
-        --uninstall cloud-init --selinux-relabel
+        --uninstall cloud-init 
+        --selinux-relabel
       
       when: copy_results is changed
 
