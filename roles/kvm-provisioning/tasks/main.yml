@@ -1,11 +1,11 @@
 ---
 - hosts: localhost
-  become: True
+#  become: True
 
 - name: Perform apt update 
   apt:
      upgrade: yes
-#     upgade_cache: True
+
 
 - name: Install needed packages
   apt:
