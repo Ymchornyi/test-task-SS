@@ -1,5 +1,7 @@
 ---
-- hosts: localhost
+- hosts: testgroup
+  become: True
+
 - name: Perform apt update 
   apt:
      upgrade: yes

@@ -1,4 +1,7 @@
 ---
+- hosts: localhost
+  become: True
+
 - name: Get VMs list
   community.libvirt.virt:
     command: list_vms
