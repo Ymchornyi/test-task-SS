@@ -5,8 +5,7 @@
     roles: 
       - kvm-provisioning
       - vm-deployment
-      - run-httpd-role
- 
+      
   - hosts: testgroup
     become: True
     roles: 
