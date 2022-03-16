@@ -1,6 +1,6 @@
 #Main yml file for test task Yo!
 ---
-  - hosts: testgroup
+  - hosts: localhost
     become: true
     roles: 
       - kvm-provisioning
