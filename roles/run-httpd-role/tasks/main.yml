@@ -1,2 +1,9 @@
 ---
-# tasks file for run-httpd-role
+- name: Perform apt update 
+  apt:
+     upgrade: yes
+
+- name: Install needed packages
+  apt:
+    name: ngnix
+    state: latest
