@@ -49,6 +49,7 @@
       command: |
         virt-customize -a {{ libvirt_pool_dir }}/{{ vm_name }}.qcow2 \
         --hostname {{ vm_name }} \
+        --run-command 'apt update -y' \
         --run-command 'apt remove --purge openssh-server -y' \
         --root-password password:{{ vm_root_pass }} \
         --ssh-inject 'root:file:/var/lib/libvirt/ssh_keys/id_rsa.pub' \
