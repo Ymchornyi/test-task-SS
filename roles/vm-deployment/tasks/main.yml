@@ -54,6 +54,7 @@
         --root-password password:{{ vm_root_pass }} \
         --ssh-inject 'root:file:/var/lib/libvirt/ssh_keys/id_rsa.pub' \
         --run-command 'apt install openssh-server -y' \
+        --append-line '/etc/ssh/sshd_config:PermitRootLogin yes' \
         --uninstall cloud-init \
         --selinux-relabel
       
