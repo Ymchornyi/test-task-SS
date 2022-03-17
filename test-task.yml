@@ -6,8 +6,8 @@
       - kvm-provisioning
       - vm-deployment
 
-  - pause:
-      minutes: 1
+#  - pause:
+#      minutes: 1
   
   - hosts: testgroup
     become: True
