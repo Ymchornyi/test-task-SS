@@ -2,7 +2,7 @@
 base_image_name: debian-11-nocloud-amd64.qcow2
 base_image_url: https://cloud.debian.org/images/cloud/bullseye/latest/{{ base_image_name }}
 libvirt_pool_dir: "/var/lib/libvirt/images"
-vm_name: debian-lab
+vm_name: debian-test
 vm_vcpus: 1
 vm_ram_mb: 1024
 vm_net: VM_net
@@ -10,4 +10,4 @@ vm_root_pass: 1234
 cleanup_tmp: no
 ssh_key: /root/.ssh/id_rsa.pub
 ssh_key_filename: root
-vm_ip_address: 192.168.123.50
+vm_ip_address: 192.168.123.51 
