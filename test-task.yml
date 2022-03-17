@@ -6,6 +6,12 @@
       - kvm-provisioning
       - vm-deployment
       
+  - name: Wait for port 22 to become open on the guest VM
+    hosts: testgroup
+    wait_for:
+      port: 22
+      delay: 10
+  
   - hosts: testgroup
     become: True
     roles: 
