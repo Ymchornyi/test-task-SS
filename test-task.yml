@@ -5,8 +5,6 @@
     roles: 
       - kvm-provisioning
       - vm-deployment
-      
-  - name: Wait for port 22 to become open on the guest VM
     pause:
       minutes: 1
   
