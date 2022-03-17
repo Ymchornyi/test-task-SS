@@ -1,4 +1,9 @@
 ---
+- name: Wait for port 22 to become open on the VM
+  wait_for:
+    port: 22
+    delay: 10
+
 - name: Perform apt update 
   apt:
      upgrade: yes
